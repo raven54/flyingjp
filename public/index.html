@@ -21,7 +21,9 @@
 
 <body>
   <div id="wrapper" class="main-container">
-    <? include "header.html" ?>
+    <div id ="header"></div>
+    <!--<? include "/header.html" ?>-->
+
     <!--슬라이드-->
     <section id="content-wrapper" class="main-wrapper">
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -317,7 +319,8 @@
 
 
     </article>
-    <? include "footer.html" ?>
+    <!--<? include "footer.html" ?> -->
+    <div id="footer"></div>
   </section>
   <script type="text/javascript">
 
@@ -362,6 +365,11 @@ $(document).ready(function () {
     });
   });
 
+  // 헤더 푸터 불러오기
+    $(document).ready(function(){
+      $("#header").load("header.html");
+      $("#footer").load("footer.html");
+    });
 </script>
   </body>
 </html>
