@@ -8,8 +8,25 @@ var stylus = require('stylus');
 var ejs = require('ejs');
 var index = require('./routes/index');
 var users = require('./routes/users');
-
 var app = express();
+
+//mysql
+var mysql = require('mysql');
+var connection = mysql.createConnection({
+  host     : 'us-cdbr-iron-east-05.cleardb.net',
+  user     : 'b2bb67f4870f87',
+  password : '56b7a545',
+  database : 'heroku_a7b27174d2150ef'
+});
+
+connection.connect();
+
+// mysql 연결지속
+connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
+  if (err) throw err;
+  console.log('점검 중입니다');
+});
+
 
 // view engine setup
 

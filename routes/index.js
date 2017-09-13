@@ -15,4 +15,10 @@ router.get('/', function(req, res, next) {
 app.get('/', function(req, res) {
     res.render('./public/index.html');
 });
+
+app.get('japan', function(req, res) {
+  if (req.country == 'Japan')
+  res.render('./public/japan.html');
+});
+
 module.exports = app;
